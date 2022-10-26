@@ -67,22 +67,11 @@ nav ul{
   padding: 2rem;
 }
 
-.valor {
-  padding: 2rem;
-  text-align: center;
-  font-size: 2rem;
+
+.resultadosBusqueda {
+  margin: 2rem 0rem
 }
 
-#conciertos {
-  margin: 1rem;
-  padding: 2rem;
-}
-
-#conciertos h3 {
-  padding-top:2rem;
-  font-weight: bold;
-}
-
-#conciertos ul {
-  padding: 1rem 0rem 0rem 2rem;
+.datosConcierto {
+  margin: 1rem
 }
