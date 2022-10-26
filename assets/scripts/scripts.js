@@ -61,18 +61,51 @@ function mostrarSeleccion (){
 })
 }
 
+//FORMULARIO 
 
-//Local Storage
-const ultimoConcierto = {
-    "nombre"    : "Orquesta Beauchef",
-    "genero"    : "Música Clásica",
-    "fecha"     : "15 de noviembre, 18:30 Hrs.",
-    "lugar"     : "Auditorio FCFM",
-    "entrada"   : "Entrada Liberada"
+const rememberDiv       = d.querySelector('.remember');
+const forgetDiv         = d.querySelector('.forget');
+const form              = d.querySelector('form');
+const nameInput         = d.querySelector('#entername');
+const submitBtn         = d.querySelector('#submitname');
+const forgetBtn         = d.querySelector('#forgetname');
+const forgetSuscribe    = d.querySelector('.suscribe')
+const h2                = d.querySelector('h2');
+const personalGreeting  = d.querySelector('.personal-greeting');
+
+
+form.addEventListener('submit', e => e.preventDefault());
+
+//Boton Ingresar
+submitBtn.addEventListener('click', () => {
+  localStorage.setItem('name', nameInput.value);
+  nameDisplayCheck();
+});
+
+//Boton Salir
+forgetBtn.addEventListener('click', () => {
+  localStorage.removeItem('name');
+  nameDisplayCheck();
+});
+
+let saludo      = "Bienvenid@ a nuestro sitio";
+let descripcion = "Si estás aquí, es porque estás en búsqueda de los mejores eventos relacionados a la música clásica chilena. Nuestro sitio se enfoca en difundir conciertos y otras actividades efectuadas por agrupaciones emergentes, universitarias, autogestionadas, etc. Revisa todos los panoramas que tenemos para ti."
+
+function nameDisplayCheck() {
+  if(localStorage.getItem('name')) {
+    const name = localStorage.getItem('name');
+    h2.textContent = `¡Hola, ${name}!`;
+    personalGreeting.textContent = `${saludo}, ${name}! ${descripcion}`;
+    forgetDiv.style.display = 'block';
+    rememberDiv.style.display = 'none';
+    forgetSuscribe.style.display = 'none';
+  } else {
+    h2.textContent = 'Bienvenidos ';
+    personalGreeting.textContent = `${saludo}! ${descripcion}`;
+    forgetDiv.style.display = 'none';
+    rememberDiv.style.display = 'block';
+    forgetSuscribe.style.display = 'block';
+  }
 }
 
-localStorage.setItem("ultimoConcierto", JSON.stringify(ultimoConcierto))
-
-const conciertoRescatado = JSON.parse(localStorage.getItem("ultimoConcierto"))
-
-
+nameDisplayCheck();

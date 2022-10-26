@@ -33,7 +33,7 @@
         <div class="bannerWrap">
             <div class="bannerBox">
                 <h1>Classical Chile</h1>
-                <h2>Un espacio para la promoción de eventos vinculados a la música clásica chilena</h2>
+                <p>Un espacio para la promoción de eventos vinculados a la música clásica chilena</p>
             </div>
         </div>
     </section>
@@ -41,8 +41,7 @@
     <!--Contenido-->
     <div class="titulo">
         <h2 class="bienvenida">BIENVENIDOS</h2>
-        <p class="descripcion">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo explicabo reprehenderit
-            itaque error, quaerat dolor!</p>
+        <p class="descripcion personal-greeting"></p>
     </div>
 
     <div class="novedades"></div>
@@ -57,10 +56,24 @@
     <div class="resultadosBusqueda"></div>
 
     <div class="formulario">
-        <h3>Suscríbete y recibe nuestras últimas novedades</h3>
+        <h3 class="suscribe">Suscríbete y recibe nuestras últimas novedades</h3>
+
         <form>
-            
-        </form>
+            <div class="remember">
+              <label for="entername">¿Cuál es tu nombre?</label>
+              <input id="entername" type="text" required>
+              <label for="email">Ingresa tu e-mail</label>
+              <input type="email" id="email" required>
+              <input id="submitname" type="submit" value="Ingresar">
+            </div>
+            <div class="forget">
+              <label for="forgetname">¿Deseas que olvidemos tu nombre?</label>
+              <input id="forgetname" type="reset" value="Salir">
+            </div>
+          </form>
+
+
+
     </div>
 
     <script src="assets/scripts/scripts.js"></script>
